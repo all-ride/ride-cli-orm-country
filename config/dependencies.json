@@ -1,0 +1,76 @@
+{
+    "dependencies": [
+        {
+            "class": "ride\\library\\system\\file\\File",
+            "id": "orm.data.continent",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "orm.path.data.continents"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "ride\\library\\system\\file\\File",
+            "id": "orm.data.country",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "orm.path.data.countries"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\orm\\OrmImportCountriesCommand",
+            "id": "orm.import.countries",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "continentPath",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\system\\file\\File",
+                                "id": "orm.data.continent"
+                            }
+                        },
+                        {
+                            "name": "countryPath",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\system\\file\\File",
+                                "id": "orm.data.country"
+                            }
+                        },
+                        {
+                            "name": "locales",
+                            "type": "call",
+                            "properties": {
+                                "interface": "ride\\library\\i18n\\I18n",
+                                "method": "getLocaleCodeList"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
