@@ -2,7 +2,7 @@
     "name": "ride/cli-orm-country",
     "description": "ORM country import command for the Ride CLI",
     "license": "MIT",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "authors": [
         {
             "name": "Joris Vandeweerd",
